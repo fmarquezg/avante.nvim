@@ -11,8 +11,8 @@ M._defaults = {
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "vertex" | "cohere" | "copilot" | string
   --provider = "claude", -- Only recommend using Claude
   --auto_suggestions_provider = "claude",
-  provider = 'ollama_deepseek'
-  auto_suggestions_provider = 'ollama_deepseek'
+  provider = 'ollama_deepseek',
+  auto_suggestions_provider = 'ollama_deepseek',
   
   ---@alias Tokenizer "tiktoken" | "hf"
   -- Used for counting tokens and encoding text.
@@ -21,13 +21,6 @@ M._defaults = {
   -- If you wish to use a given implementation, then you can override it here.
   tokenizer = "tiktoken",
   ---@type AvanteSupportedProvider
-  ollama_deepseek = {
-    endpoint = "http://localhost:11434/api",
-    model = "tripplyons/r1-distill-qwen-7b", -- or whatever your model name is
-    timeout = 30000,
-    temperature = 0,
-    max_tokens = 4096,
-  },
   openai = {
     endpoint = "https://api.openai.com/v1",
     model = "gpt-4o",
