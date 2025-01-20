@@ -12,7 +12,7 @@ M._defaults = {
   --provider = "claude", -- Only recommend using Claude
   --auto_suggestions_provider = "claude",
   provider = 'myollama',
-  auto_suggestions_provider = 'ollama',
+  auto_suggestions_provider = 'myollama',
   
   ---@alias Tokenizer "tiktoken" | "hf"
   -- Used for counting tokens and encoding text.
