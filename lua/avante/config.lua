@@ -12,7 +12,7 @@ M._defaults = {
   --provider = "claude", -- Only recommend using Claude
   --auto_suggestions_provider = "claude",
   provider = 'openai',
-  auto_suggestions_provider = '',
+  auto_suggestions_provider = 'openai',
   
   ---@alias Tokenizer "tiktoken" | "hf"
   -- Used for counting tokens and encoding text.
@@ -21,13 +21,6 @@ M._defaults = {
   -- If you wish to use a given implementation, then you can override it here.
   tokenizer = "tiktoken",
   ---@type AvanteSupportedProvider
-  myollama = {
-    endpoint = "http://localhost:11434/api",
-    model = "tripplyons/r1-distill-qwen-7b",
-    timeout = 30000, -- Timeout in milliseconds
-    temperature = 0,
-    max_tokens = 4096,
-  },
   openai = {
     --endpoint = "https://api.openai.com/v1",
     --model = "gpt-4o",
