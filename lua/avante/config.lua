@@ -9,8 +9,11 @@ local M = {}
 M._defaults = {
   debug = false,
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "vertex" | "cohere" | "copilot" | string
-  provider = "claude", -- Only recommend using Claude
-  auto_suggestions_provider = "claude",
+  --provider = "claude", -- Only recommend using Claude
+  --auto_suggestions_provider = "claude",
+  provider = 'ollama-deepseek'
+  auto_suggestions_provider = 'ollama-deepseek'
+  
   ---@alias Tokenizer "tiktoken" | "hf"
   -- Used for counting tokens and encoding text.
   -- By default, we will use tiktoken.
@@ -81,6 +84,13 @@ M._defaults = {
   ---@type {[string]: AvanteProvider}
   vendors = {
     ---@type AvanteSupportedProvider
+    ["ollama-deepseek"] = {
+      endpoint = "http://localhost:11434/api",
+      model = "tripplyons/r1-distill-qwen-7b", -- You can change this to any model you have pulled in Ollama
+      timeout = 30000,
+      temperature = 0,
+      max_tokens = 4096,
+    },
     ["claude-haiku"] = {
       __inherited_from = "claude",
       model = "claude-3-5-haiku-20241022",
