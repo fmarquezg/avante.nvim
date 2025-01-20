@@ -21,6 +21,13 @@ M._defaults = {
   -- If you wish to use a given implementation, then you can override it here.
   tokenizer = "tiktoken",
   ---@type AvanteSupportedProvider
+  ollama-deepseek = {
+    endpoint = "http://localhost:11434/api",
+    model = "tripplyons/r1-distill-qwen-7b", -- or whatever your model name is
+    timeout = 30000,
+    temperature = 0,
+    max_tokens = 4096,
+  },
   openai = {
     endpoint = "https://api.openai.com/v1",
     model = "gpt-4o",
