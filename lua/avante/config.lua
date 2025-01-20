@@ -11,7 +11,7 @@ M._defaults = {
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "vertex" | "cohere" | "copilot" | string
   --provider = "claude", -- Only recommend using Claude
   --auto_suggestions_provider = "claude",
-  provider = 'ollama_deepseek',
+  provider = 'ollama',
   auto_suggestions_provider = 'ollama_deepseek',
   
   ---@alias Tokenizer "tiktoken" | "hf"
@@ -84,7 +84,7 @@ M._defaults = {
   ---@type {[string]: AvanteProvider}
   vendors = {
     ---@type AvanteSupportedProvider
-    ["ollama_deepseek"] = {
+    ["ollama"] = {
       endpoint = "http://localhost:11434/api",
       model = "tripplyons/r1-distill-qwen-7b", -- You can change this to any model you have pulled in Ollama
       timeout = 30000,
