@@ -91,13 +91,6 @@ M._defaults = {
   ---@type {[string]: AvanteProvider}
   vendors = {
     ---@type AvanteSupportedProvider
-    ["ollama"] = {
-      endpoint = "http://localhost:11434/api",
-      model = "tripplyons/r1-distill-qwen-7b", -- You can change this to any model you have pulled in Ollama
-      timeout = 30000,
-      temperature = 0,
-      max_tokens = 4096,
-    },
     ["claude-haiku"] = {
       __inherited_from = "claude",
       model = "claude-3-5-haiku-20241022",
