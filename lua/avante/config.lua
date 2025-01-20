@@ -11,8 +11,8 @@ M._defaults = {
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "vertex" | "cohere" | "copilot" | string
   --provider = "claude", -- Only recommend using Claude
   --auto_suggestions_provider = "claude",
-  provider = 'openai',
-  auto_suggestions_provider = 'openai',
+  provider = 'ollama',
+  auto_suggestions_provider = 'ollama',
   
   ---@alias Tokenizer "tiktoken" | "hf"
   -- Used for counting tokens and encoding text.
@@ -22,10 +22,10 @@ M._defaults = {
   tokenizer = "tiktoken",
   ---@type AvanteSupportedProvider
   openai = {
-    --endpoint = "https://api.openai.com/v1",
-    --model = "gpt-4o",
-    endpoint = "http://localhost:11434",
-    model = "tripplyons/r1-distill-qwen-7b",
+    endpoint = "https://api.openai.com/v1",
+    model = "gpt-4o",
+    --endpoint = "http://localhost:11434",
+    --model = "tripplyons/r1-distill-qwen-7b",
     timeout = 30000, -- Timeout in milliseconds
     temperature = 0,
     max_tokens = 4096,
@@ -85,6 +85,12 @@ M._defaults = {
   ---See https://github.com/yetone/avante.nvim/wiki#custom-providers for more details
   ---@type {[string]: AvanteProvider}
   vendors = {
+    ollama = {
+    __inherited_from = "openai",
+    api_key_name = "",
+    endpoint = "http://127.0.0.1:11434/v1",
+    model = "tripplyons/r1-distill-qwen-7b",
+   },
     ---@type AvanteSupportedProvider
     ["claude-haiku"] = {
       __inherited_from = "claude",
